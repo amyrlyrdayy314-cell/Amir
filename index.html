@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0c0c0d">
+  <title>FRET — Guitar Studio</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json">
+</head>
+<body>
+<header>
+  <div class="brand">FRET<span>.</span></div>
+  <div class="subtitle">GUITAR STUDIO</div>
+</header>
+
+<nav>
+  <button class="active" data-page="home">Home</button>
+  <button data-page="tuner">Tuner</button>
+  <button data-page="metronome">Tempo</button>
+  <button data-page="editor">Studio</button>
+</nav>
+
+<main>
+<section id="home" class="page active">
+  <div class="hero">
+    <div class="eyebrow">YOUR PERSONAL MUSIC SPACE</div>
+    <h1>Play it.<br><span>Perfect it.</span></h1>
+    <p>Everything a guitarist needs, in one place.</p>
+  </div>
+  <div class="cards">
+    <div class="card" data-open="tuner">
+      <div class="icon">♩</div><h2>Chromatic Tuner</h2>
+      <p>Find your perfect pitch.</p><span>OPEN →</span>
+    </div>
+    <div class="card" data-open="metronome">
+      <div class="icon">◷</div><h2>Metronome</h2>
+      <p>Master your timing.</p><span>OPEN →</span>
+    </div>
+    <div class="card" data-open="editor">
+      <div class="icon">𝄞</div><h2>Music Studio</h2>
+      <p>Write notes and tabs.</p><span>OPEN →</span>
+    </div>
+  </div>
+</section>
+
+<section id="tuner" class="page">
+  <div class="section-title"><span>01 / TUNER</span><h1>Chromatic Tuner</h1></div>
+  <div class="tuner-box">
+    <div class="tuner-note" id="note">--</div>
+    <div class="frequency" id="frequency">0.00 Hz</div>
+    <div class="meter"><div class="meter-center"></div><div class="needle" id="needle"></div></div>
+    <div class="tuner-status" id="tunerStatus">READY TO TUNE</div>
+    <button class="gold-button" id="tunerButton">START TUNER</button>
+  </div>
+  <div class="tuning-info"><span>STANDARD TUNING</span><div>E₂ — A₂ — D₃ — G₃ — B₃ — E₄</div></div>
+</section>
+
+<section id="metronome" class="page">
+  <div class="section-title"><span>02 / RHYTHM</span><h1>Metronome</h1></div>
+  <div class="tempo-box">
+    <div class="tempo-label">BEATS PER MINUTE</div>
+    <div class="bpm"><button id="minus">−</button><strong id="bpm">120</strong><button id="plus">+</button></div>
+    <input type="range" min="20" max="300" value="120" id="tempoRange">
+    <div class="beat-indicator" id="beatIndicator"><i></i><i></i><i></i><i></i></div>
+    <div class="tempo-controls"><button id="tap">TAP TEMPO</button><button id="startMetronome" class="gold-button">START</button></div>
+    <div class="time-signature">
+      <label>TIME SIGNATURE</label>
+      <select id="signature">
+        <option value="2">2 / 4</option><option value="3">3 / 4</option>
+        <option value="4" selected>4 / 4</option><option value="5">5 / 4</option>
+        <option value="6">6 / 4</option><option value="7">7 / 4</option>
+      </select>
+    </div>
+  </div>
+</section>
+
+<section id="editor" class="page">
+  <div class="section-title"><span>03 / STUDIO</span><h1>Music Studio</h1></div>
+  <input id="songTitle" class="song-title" placeholder="Untitled composition">
+  <div class="editor-tabs"><button class="active" data-mode="tab">TAB</button><button data-mode="notation">NOTATION</button></div>
+  <div id="tabEditor" class="tab-editor">
+    <div class="string-labels"><span>e</span><span>B</span><span>G</span><span>D</span><span>A</span><span>E</span></div>
+    <div id="tabLines"></div>
+  </div>
+  <div class="editor-controls">
+    <label>STRING</label>
+    <select id="stringSelect">
+      <option value="0">High E</option><option value="1">B</option><option value="2">G</option>
+      <option value="3">D</option><option value="4">A</option><option value="5">Low E</option>
+    </select>
+    <label>FRET</label><input type="number" id="fretInput" min="0" max="24" value="0">
+    <button id="addNote" class="gold-button">ADD NOTE</button><button id="clearTab">CLEAR</button>
+  </div>
+  <div class="editor-controls"><button id="convertTab">TAB → NOTES</button><button id="convertNotation">NOTES → TAB</button></div>
+  <div id="conversionResult" class="conversion-result">Your composition will appear here.</div>
+  <button id="saveComposition" class="gold-button">SAVE COMPOSITION</button>
+  <div id="savedCompositions"></div>
+</section>
+</main>
+<footer>FRET STUDIO <span>© 2026</span></footer>
+<script src="app.js"></script>
+</body>
+</html>

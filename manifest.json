@@ -1,0 +1,10 @@
+{
+  "name": "FRET Guitar Studio",
+  "short_name": "FRET",
+  "description": "Your personal guitar studio",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#0c0c0d",
+  "theme_color": "#0c0c0d",
+  "orientation": "portrait"
+}

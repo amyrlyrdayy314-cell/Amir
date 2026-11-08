@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
+:root{--bg:#0c0c0d;--panel:#151515;--gold:#c9a66b;--text:#f2eee7;--muted:#85817a;--border:#292725}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;padding:25px 20px;max-width:650px;margin-inline:auto}
+header{padding:15px 0 25px}.brand{font-size:35px;font-weight:700;letter-spacing:5px}.brand span{color:var(--gold)}
+.subtitle{font-size:9px;letter-spacing:4px;color:var(--muted);margin-top:4px}
+nav{display:flex;overflow-x:auto;gap:8px;border-bottom:1px solid var(--border);padding-bottom:15px}
+nav button,.editor-tabs button{background:transparent;color:var(--muted);border:1px solid transparent;padding:10px 15px;border-radius:8px;white-space:nowrap}
+nav button.active,.editor-tabs button.active{background:#29251e;color:var(--gold);border-color:#51432e}
+.page{display:none;padding-top:30px}.page.active{display:block}
+.hero{padding:35px 5px}.eyebrow,.section-title span{color:var(--gold);font-size:10px;letter-spacing:3px}
+.hero h1{font-family:'Playfair Display',serif;font-size:53px;line-height:1.12;margin:20px 0}.hero h1 span{color:var(--gold)}
+.hero p{color:var(--muted);font-size:13px}
+.cards{display:grid;gap:13px}.card,.tuner-box,.tempo-box{background:linear-gradient(145deg,#1b1a18,#111);border:1px solid var(--border);border-radius:15px;padding:22px}
+.card{cursor:pointer}.icon{font-size:27px;color:var(--gold)}.card h2{font-family:'Playfair Display',serif;font-size:21px;margin-bottom:5px}
+.card p{color:var(--muted);font-size:12px}.card span{display:block;color:var(--gold);font-size:10px;letter-spacing:2px;margin-top:20px}
+.section-title{margin-bottom:30px}.section-title h1{font-family:'Playfair Display',serif;font-size:32px;margin-top:12px}
+.tuner-box{text-align:center;padding:35px 20px}.tuner-note{font-family:'Playfair Display',serif;font-size:100px;color:var(--gold)}
+.frequency{font-size:13px;color:var(--muted)}.meter{position:relative;height:60px;margin:40px 0 20px;border-top:2px solid #51432e}
+.meter-center{position:absolute;left:50%;top:-9px;height:17px;width:2px;background:var(--gold)}
+.needle{position:absolute;left:50%;top:-15px;height:30px;width:3px;background:#e7e0d3;transform-origin:bottom;transition:transform .12s}
+.tuner-status{color:var(--muted);font-size:11px;letter-spacing:2px;margin-bottom:25px}
+.gold-button{background:var(--gold);color:#15120d;border:none;border-radius:8px;padding:13px 22px;font-weight:700;letter-spacing:1px}
+.tuning-info{margin-top:20px;background:var(--panel);padding:20px;border-radius:12px;text-align:center;color:var(--gold);font-size:12px}
+.tuning-info div{color:var(--muted);margin-top:12px}
+.tempo-box{text-align:center;padding:30px 20px}.tempo-label{color:var(--muted);font-size:10px;letter-spacing:3px}
+.bpm{display:flex;align-items:center;justify-content:space-around;margin:30px 0}.bpm strong{font-size:75px;font-family:'Playfair Display',serif;color:var(--gold)}
+.bpm button{background:#29251e;color:var(--gold);border:none;width:40px;height:40px;border-radius:50%;font-size:22px}
+input[type=range]{width:100%;accent-color:var(--gold)}
+.beat-indicator{display:flex;justify-content:center;gap:15px;margin:35px 0}.beat-indicator i{width:13px;height:13px;background:#39342c;border-radius:50%}
+.beat-indicator i.active{background:var(--gold);box-shadow:0 0 15px var(--gold)}
+.tempo-controls{display:flex;gap:10px;justify-content:center;margin-bottom:30px}
+.tempo-controls button,.editor-controls button{border:1px solid var(--border);border-radius:8px;padding:12px;background:#201f1d;color:var(--text)}
+.tempo-controls .gold-button{background:var(--gold);color:#15120d}
+.time-signature{display:flex;justify-content:space-between;align-items:center;color:var(--muted);font-size:11px}
+select,input{background:#242321;color:var(--text);border:1px solid var(--border);border-radius:6px;padding:9px}
+.song-title{width:100%;font-size:18px;margin-bottom:20px}.editor-tabs{display:flex;gap:10px;margin-bottom:25px}
+.tab-editor{background:#181715;padding:15px;border-radius:10px;display:flex;gap:15px;overflow-x:auto}
+.string-labels,#tabLines{display:flex;flex-direction:column;gap:13px}.string-labels{color:var(--gold);font-weight:700}
+#tabLines{flex:1;min-width:250px}.tab-row{height:1px;background:#827c70;display:flex;align-items:center;gap:14px}
+.tab-row span{background:#181715;color:var(--text);font-size:12px;min-width:10px;text-align:center;transform:translateY(-6px)}
+.editor-controls{display:flex;flex-wrap:wrap;gap:9px;align-items:center;margin:22px 0}
+.editor-controls label{color:var(--muted);font-size:10px}.editor-controls input{width:65px}
+.conversion-result{background:var(--panel);border:1px solid var(--border);padding:18px;border-radius:10px;margin-bottom:20px;color:var(--muted);font-size:13px;line-height:2}
+footer{border-top:1px solid var(--border);padding:25px 0;margin-top:50px;color:var(--muted);font-size:10px;letter-spacing:2px}
+footer span{float:right}#savedCompositions{margin-top:20px;color:var(--gold)}
+@media(min-width:550px){.cards{grid-template-columns:repeat(2,1fr)}}
+@media(prefers-reduced-motion:no-preference){button,.card{transition:.2s}button:active{transform:scale(.97)}}
